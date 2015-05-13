@@ -1,0 +1,9 @@
+<% if @chirps.empty? %>
+  <p>No chirps yet!</p>
+ <% else %>
+   <ul>
+   	<% @chirps.each do |chirp| %>
+   	<li><%= chirp.user.slug %>: <%= chirp.status %></li>
+   	<% end %>
+   </ul>
+  <% end %>
