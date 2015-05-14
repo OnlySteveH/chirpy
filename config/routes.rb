@@ -49,7 +49,6 @@ Chirpy::Application.routes.draw do
 
   resources :chirps
    
-  resources :users, only: [:show, :index]
 
   get "profile", to: "users#show" 
   post "favourite/:id", to: "posts#favourite", as: "fave"

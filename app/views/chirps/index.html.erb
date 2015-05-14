@@ -1,9 +1,16 @@
 <% if @chirps.empty? %>
   <p>No chirps yet!</p>
  <% else %>
-   <ul>
+   
    	<% @chirps.each do |chirp| %>
-   	<li><%= chirp.user.slug %>: <%= chirp.status %></li>
+   	<div class='chirp'>
+   		<p><%= chirp.user.slug %>:</p>
+   		<p class='status'><%= chirp.status %></p><p><%= chirp.created_at %></p><p><%= link_to "Edit Chirp", edit_chirp_path(chirp) %></p> 
+
+   	</div>
+   	<p>
+   	<%= button_to "Delete Chirp", chirp, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-default" %>
+   </p>
    	<% end %>
-   </ul>
+   
   <% end %>

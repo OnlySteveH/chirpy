@@ -1,0 +1,16 @@
+<% unless @chirp.errors.empty? %>
+<ul>
+	<% @chirp.errors.full_messages.each do |message| %>
+	<li><%= message %></li>
+<% end %>
+</ul>
+<% end %>
+
+
+<%= form_for @chirp do |f| %>
+	<div class="form-group">
+		<%= f.label :status, class: "control-label" %>
+		<p><%= f.text_area :status, class: "form-control" %></p>
+	</div>
+	<%= f.submit "Chirp!", class: "btn btn-default" %>	 
+<% end %>
