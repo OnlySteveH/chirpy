@@ -10,7 +10,7 @@ class ChirpsController < ApplicationController
 
 	def new
 		@chirp = Chirp.new
-  end
+        end
 
   def create
   	@chirp = Chirp.new(chirp_params)
@@ -49,6 +49,5 @@ class ChirpsController < ApplicationController
   		redirect_to chirps_parth, alert: "Uh-oh. Chirp not deleted."
   	end
   end
-
 
 end
